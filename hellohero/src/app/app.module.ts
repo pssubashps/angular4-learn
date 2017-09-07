@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule }   from '@angular/router';
+import { RouterModule,Routes }   from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { HeroDetailComponent } from './hero-detail.component'
 import { HeroService} from './hero.service';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { AppRoutingModule }     from './app-routing.module';
 
 
 @NgModule({
@@ -21,25 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/test',
-        pathMatch: 'full'
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
