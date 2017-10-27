@@ -1,0 +1,11 @@
+<br>
+<button class="btn btn-primary" [disabled]="!allowNewStudent"
+(click) = "onAddStudent()"
+>
+    
+    Add Student {{allowNewStudent}}</button>
+    <h2>{{studentCreationMessage}}</h2>
+    <br>
+    <br>
+<app-student></app-student>
+<app-student></app-student>
